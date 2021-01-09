@@ -5,7 +5,7 @@ import './Card.css';
 export default class Card extends Component {
     render () {
         return (
-            <div className="col-md-3 mt-4">
+            <div className="col-md-3 col-6 mt-4">
                 <div className={`card ${(this.props.provideDetail) && 'cursor-pointer'}`} onClick={this.props.onClick}>
                     {/* Show close button if props.isCloseAble = true */}
                     { (this.props.isCloseAble) && <button className="btn btn-outline-danger btn-sm card-close" onClick={this.props.handleRemovePokemon}><i className="fa fa-times"></i></button> }

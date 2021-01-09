@@ -42,37 +42,39 @@ export default class ModalDetail extends Component {
                                     <h4>{this.props.selectedPokemonDetail.base_experience || <Skeleton />}</h4>
                                 </div>
                             </div>
+
                             <hr/>
+
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">hp</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.hp}</h4>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">speed</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.speed}</h4>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">attack</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.attack}</h4>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">special attack</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.special_attack}</h4>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">defense</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.defense}</h4>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-6">
                                     <label className="small text-muted mb-0 text-capitalize">special defense</label>
                                     <h4>{this.props.selectedPokemonDetail.stats.special_defense}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
+                    <div className="row mt-4">
+                        <div className="col">
                             {/* Chart Component */}
                             <RadarStats datasets={[this.props.selectedPokemonDetail]} />
                         </div>

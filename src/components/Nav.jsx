@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 
 import { NavLink } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
-export default class Nav extends Component {
+import './Nav.css';
+
+export default class Navigation extends Component {
     render () {
         return (
-            <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-                <NavLink to="/" className="navbar-brand">Pokedex | Warung Pintar</NavLink>
-                
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <NavLink to="/browse" className="nav-link">Browse Pokemon</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/compare" className="nav-link">Compare Pokemon</NavLink>
-                    </li>
-                </ul>
-            </nav>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Brand href="/">Pokedex | Warung Pintar</Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbar" />
+                <Navbar.Collapse id="navbar">
+                    <Nav className="ml-auto">
+                        <NavLink to='/browse' className="nav-link" activeClassName='active'>Browse Pokemon</NavLink>
+                        <NavLink to='/compare' className="nav-link" activeClassName='active'>Compare Pokemon</NavLink>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         )
     }
 }
