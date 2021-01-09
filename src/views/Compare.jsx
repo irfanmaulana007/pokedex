@@ -94,9 +94,12 @@ export default class Compare extends Component {
     }
 
     // remove item from pokemonToCompare state by click Close button inside card's component
-    handleRemovePokemon = (id) => {
-        _.remove(this.state.pokemonToCompare, (pokemon) => { return pokemon.id === id })
-        this.setState({ pokemonToCompare: this.state.pokemonToCompare })
+    handleRemovePokemon = (data) => {
+        _.remove(this.state.pokemonToCompare, (pokemon) => { return pokemon.id === data.id })
+        this.setState({ 
+            pokemonToCompare: this.state.pokemonToCompare,
+            totalPower: this.state.totalPower - data.power
+         })
     }
 
     render () {
@@ -150,7 +153,7 @@ export default class Compare extends Component {
                 {/* Selected Pokemon */}
                 <div className="row">
                     {pokemonToCompare.map((values, key) =>
-                        <Card key={key} isCloseAble={true} values={values} handleRemovePokemon={() => this.handleRemovePokemon(values.id)} />
+                        <Card key={key} isCloseAble={true} values={values} handleRemovePokemon={() => this.handleRemovePokemon(values)} />
                     )}
                 </div>
             </div>
