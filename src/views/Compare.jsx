@@ -17,7 +17,7 @@ export default class Compare extends Component {
             pokemonSelected: { name: '' },
             pokemonToCompare: [],
             selectedPokemonDetail: { stats: [], types: [] },
-            limitData: 10, // limit pokemon data
+            limitData: 50, // limit pokemon data
             totalPower: 0
         }
     }
